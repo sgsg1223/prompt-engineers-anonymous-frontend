@@ -1,7 +1,7 @@
 import type { NextConfig } from "next";
 
 const BACKEND_URL =
-  process.env.BACKEND_URL ?? "https://internal.hellman.oxygen.dfds.cloud";
+  process.env.BACKEND_URL ?? "https://api.hellman.oxygen.dfds.cloud";
 
 const nextConfig: NextConfig = {
   turbopack: {
