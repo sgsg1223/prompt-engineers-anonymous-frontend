@@ -64,8 +64,10 @@ const INSPECTION_BADGE: Record<
 };
 
 export default function BookingCard({ booking }: BookingCardProps) {
-  const status = STATUS_STYLES[booking.bookingStatus];
-  const inspection = INSPECTION_BADGE[booking.inspectionStatus];
+  const status = STATUS_STYLES[booking.bookingStatus] ?? STATUS_STYLES.Booked;
+  const inspection =
+    INSPECTION_BADGE[booking.inspectionStatus] ??
+    INSPECTION_BADGE["Not Inspected"];
   const isCancelled = booking.bookingStatus === "Cancelled";
   const isHazardous = booking.hazardous.length > 0;
 
