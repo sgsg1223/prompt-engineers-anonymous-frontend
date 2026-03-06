@@ -1,0 +1,26 @@
+@import "tailwindcss";
+@import "@dfds-frontend/navigator-components/styles";
+@source "../node_modules/@dfds-frontend/compass-ui";
+@source "../node_modules/@dfds-frontend/navigator-components/src";
+
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family:
+    source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
+/*
+ * Tailwind v4 preflight sets display:block on all SVGs, breaking
+ * Navigator icon layouts. Reset to inline within the base layer
+ * so Tailwind utilities can still override when needed.
+ */
+@layer base {
+  svg {
+    display: inline;
+  }
+}

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Voyage Planning - Rail Logistics</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#135bec",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#101622",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen">
+<div class="relative flex h-auto min-h-screen w-full flex-col bg-background-light dark:bg-background-dark overflow-x-hidden">
+<header class="sticky top-0 z-10 bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800">
+<div class="flex items-center p-4 justify-between">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-slate-900 dark:text-slate-100">menu</span>
+<h2 class="text-lg font-bold leading-tight tracking-tight">Voyage Planning</h2>
+</div>
+<div class="flex items-center gap-2">
+<button class="p-2 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-full">
+<span class="material-symbols-outlined text-slate-900 dark:text-slate-100">search</span>
+</button>
+<button class="p-2 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-full">
+<span class="material-symbols-outlined text-slate-900 dark:text-slate-100">notifications</span>
+</button>
+</div>
+</div>
+<div class="px-4">
+<div class="flex gap-8">
+<a class="flex flex-col items-center justify-center border-b-[3px] border-primary text-primary pb-3 pt-2" href="#">
+<p class="text-sm font-bold">Main List</p>
+</a>
+<a class="flex flex-col items-center justify-center border-b-[3px] border-transparent text-slate-500 dark:text-slate-400 pb-3 pt-2" href="#">
+<p class="text-sm font-bold">Spare List</p>
+</a>
+</div>
+</div>
+</header>
+<main class="flex-1 overflow-y-auto">
+<section class="p-4">
+<div class="flex items-center justify-between mb-4">
+<h3 class="text-lg font-bold">Train Capacity Monitoring</h3>
+<span class="text-xs font-semibold text-primary bg-primary/10 px-2 py-1 rounded-full uppercase">Voyage #V-2024-082</span>
+</div>
+<div class="grid grid-cols-2 gap-3 mb-6">
+<div class="flex flex-col gap-1 rounded-xl p-4 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm">
+<p class="text-slate-500 dark:text-slate-400 text-xs font-medium uppercase tracking-wider">Units Capacity</p>
+<p class="text-xl font-bold">42/50 <span class="text-sm font-normal text-slate-400">TEU</span></p>
+<div class="w-full bg-slate-100 dark:bg-slate-800 h-1.5 rounded-full mt-1 overflow-hidden">
+<div class="bg-primary h-full w-[84%]"></div>
+</div>
+<p class="text-primary text-xs font-bold mt-1">84% Used</p>
+</div>
+<div class="flex flex-col gap-1 rounded-xl p-4 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm">
+<p class="text-slate-500 dark:text-slate-400 text-xs font-medium uppercase tracking-wider">Gross Weight</p>
+<p class="text-xl font-bold">1620 <span class="text-sm font-normal text-slate-400">t</span></p>
+<div class="w-full bg-slate-100 dark:bg-slate-800 h-1.5 rounded-full mt-1 overflow-hidden">
+<div class="bg-primary h-full w-[90%]"></div>
+</div>
+<p class="text-primary text-xs font-bold mt-1">90% of 1800t</p>
+</div>
+<div class="flex flex-col gap-1 rounded-xl p-4 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm">
+<p class="text-slate-500 dark:text-slate-400 text-xs font-medium uppercase tracking-wider">Train Payload</p>
+<p class="text-xl font-bold">1100 <span class="text-sm font-normal text-slate-400">t</span></p>
+<div class="w-full bg-slate-100 dark:bg-slate-800 h-1.5 rounded-full mt-1 overflow-hidden">
+<div class="bg-primary h-full w-[88%]"></div>
+</div>
+<p class="text-primary text-xs font-bold mt-1">88% of 1250t</p>
+</div>
+<div class="flex flex-col gap-1 rounded-xl p-4 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm">
+<p class="text-slate-500 dark:text-slate-400 text-xs font-medium uppercase tracking-wider">Wagon Payload</p>
+<p class="text-xl font-bold">66.5 <span class="text-sm font-normal text-slate-400">t</span></p>
+<div class="w-full bg-slate-100 dark:bg-slate-800 h-1.5 rounded-full mt-1 overflow-hidden">
+<div class="bg-orange-500 h-full w-[95%]"></div>
+</div>
+<p class="text-orange-500 text-xs font-bold mt-1">95% (Near Limit)</p>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-900 rounded-xl p-4 border border-slate-200 dark:border-slate-800 shadow-sm mb-6">
+<div class="flex items-center justify-between mb-3">
+<h4 class="font-bold text-sm flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-lg">contract</span>
+                            Slot Agreements Impact
+                        </h4>
+</div>
+<div class="flex gap-4">
+<div class="flex-1 border-r border-slate-100 dark:border-slate-800 pr-2">
+<p class="text-[10px] text-slate-500 uppercase font-bold">Allocated</p>
+<p class="text-lg font-bold">12 TEU</p>
+</div>
+<div class="flex-1">
+<p class="text-[10px] text-slate-500 uppercase font-bold">Remaining Open</p>
+<p class="text-lg font-bold text-primary">8 TEU</p>
+</div>
+</div>
+</div>
+<div class="mb-4">
+<div class="flex items-center justify-between mb-2">
+<h3 class="font-bold">Active Rail Bookings</h3>
+<span class="text-xs text-slate-500">6 total bookings</span>
+</div>
+<div class="space-y-3">
+<div class="bg-white dark:bg-slate-900 p-4 rounded-xl border-l-4 border-primary shadow-sm">
+<div class="flex justify-between items-start mb-2">
+<div>
+<p class="text-xs font-bold text-primary">RB-99210-XC</p>
+<h5 class="font-bold">Mediterranean Shipping Co.</h5>
+</div>
+<div class="flex flex-col items-end">
+<span class="bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 text-[10px] font-bold px-2 py-0.5 rounded-full uppercase flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">gavel</span>
+                                        Customs Cleared
+                                    </span>
+<span class="text-[10px] text-slate-400 mt-1">Slot Agreement</span>
+</div>
+</div>
+<div class="grid grid-cols-3 gap-2 py-2 border-t border-slate-50 dark:border-slate-800 mt-2">
+<div>
+<p class="text-[10px] text-slate-400 uppercase">Load</p>
+<p class="text-xs font-semibold">2x 40' HC</p>
+</div>
+<div>
+<p class="text-[10px] text-slate-400 uppercase">Weight</p>
+<p class="text-xs font-semibold">52.4 t</p>
+</div>
+<div class="text-right">
+<span class="material-symbols-outlined text-slate-400">drag_indicator</span>
+</div>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-900 p-4 rounded-xl border-l-4 border-slate-300 dark:border-slate-700 shadow-sm opacity-90">
+<div class="flex justify-between items-start mb-2">
+<div>
+<p class="text-xs font-bold text-slate-500">RB-99245-AA</p>
+<h5 class="font-bold">Maersk Logistics</h5>
+</div>
+<div class="flex flex-col items-end">
+<span class="bg-orange-100 dark:bg-orange-900/30 text-orange-700 dark:text-orange-400 text-[10px] font-bold px-2 py-0.5 rounded-full uppercase flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">hourglass_empty</span>
+                                        Customs Pending
+                                    </span>
+</div>
+</div>
+<div class="grid grid-cols-3 gap-2 py-2 border-t border-slate-50 dark:border-slate-800 mt-2">
+<div>
+<p class="text-[10px] text-slate-400 uppercase">Load</p>
+<p class="text-xs font-semibold">4x 20' Std</p>
+</div>
+<div>
+<p class="text-[10px] text-slate-400 uppercase">Weight</p>
+<p class="text-xs font-semibold">88.0 t</p>
+</div>
+<div class="text-right">
+<span class="material-symbols-outlined text-slate-400">drag_indicator</span>
+</div>
+</div>
+</div>
+<div class="border-2 border-dashed border-slate-200 dark:border-slate-800 rounded-xl p-4 flex flex-col items-center justify-center text-slate-400 gap-2">
+<span class="material-symbols-outlined text-3xl">add_circle</span>
+<p class="text-xs font-medium">Drag from Spare List to Assign</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<nav class="sticky bottom-0 bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 px-4 pb-6 pt-2">
+<div class="flex justify-between items-center">
+<a class="flex flex-col items-center gap-1 text-primary" href="#">
+<span class="material-symbols-outlined">train</span>
+<p class="text-[10px] font-bold">Voyages</p>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-500 dark:text-slate-400" href="#">
+<span class="material-symbols-outlined">calendar_today</span>
+<p class="text-[10px] font-bold">Bookings</p>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-500 dark:text-slate-400" href="#">
+<span class="material-symbols-outlined">inventory_2</span>
+<p class="text-[10px] font-bold">Assets</p>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-500 dark:text-slate-400" href="#">
+<span class="material-symbols-outlined">bar_chart</span>
+<p class="text-[10px] font-bold">Reports</p>
+</a>
+</div>
+</nav>
+</div>
+</body></html>
